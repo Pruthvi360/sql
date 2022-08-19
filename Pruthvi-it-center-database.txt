@@ -17,18 +17,14 @@ it will ask for password.
 >show tables;
 
 >create table personal_info (
-  id int NOT NULL PRIMARY KEY,
+  user_id int NOT NULL PRIMARY KEY,
   first_name varchar(50) NOT NULL,
   last_name varchar(25) NOT NULL,
   mobile_no varchar(13) constraint CK_personal_info_mobile_no check (
     mobile_no like '[0-9][0-9][-][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
   ) NOT NULL,
   location varchar(25) NOT NULL,
-  username varchar(25) NOT NULL,
-  password varchar(25) NOT NULL,
-  FOREIGN KEY(username) REFERENCES login_info(username),
-  FOREIGN KEY(password) REFERENCES login_info(password)
-);
+  age char(2));
 
 
 >show tables;
@@ -37,6 +33,8 @@ it will ask for password.
 index_id smallint unsigned AUTO_INCREMENT PRIMARY KEY,
 username varchar(25) NOT NULL,
 password varchar(25) NOT NULL);
+FOREIGN KEY(username) REFERENCES login_info(username),
+FOREIGN KEY(password) REFERENCES login_info(password));
 
 >show tables;
 
