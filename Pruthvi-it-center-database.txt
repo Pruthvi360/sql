@@ -1,0 +1,55 @@
+STEPS:
+
+> sudo apt update
+> sudo apt install mysql-server -y
+> sudo mysql
+OR
+> sudo mysql -u root -p -h myserver.com -P 3306 
+it will ask for password.
+
+
+>show databases;
+
+>create database pruthvi_it_center;
+
+>use pruthvi_it_center;
+
+>show tables;
+
+>create table personal_info ( id int NOT NULL PRIMARY KEY,
+first_name varchar(50) NOT NULL,
+last_name varchar(25) NOT NULL,
+mobile_no varchar(13) 
+   constraint CK_personal_info_mobile_no check ( mobile_no like '[0-9][0-9][-][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]' NOT NULL,
+location varchar(25) NOT NULL,
+username varchar(25) FOREIGN KEY REFERENCES login_info(username),
+password varchar(25) FOREIGN KEY REFERENCES login_info(password));
+
+
+>show tables;
+
+>create table login_info (
+username varchar(25) NOT NULL PRIMARY KEY,
+password varchar(25) NOT NULL);
+
+>show tables;
+
+>create table order_history(
+order bigint NOT NULL PRIMARY KEY,
+product_id varchar(25) FOREIGN KEY REFERENCES product_table(product_id),
+product_name varchar(255) FOREIGN KEY REFERENCES product_table(product_name));
+
+>show tables;
+
+>create table product_table (
+id bigint NOT NULL,
+product_id varchar(25) NOT NULL PRIMARY KEY,
+product_name varchar(255) NOT NULL,
+product_price varchar(6) NOT NULL,
+available_size varchar(5) NOT NULL);
+
+
+>create table indexing (id int FOREIGN KEY REFERENCES personal_info(id),
+username varchar(25) NOT NULL FOREIGN KEY REFERENCES login_info(username));
+
+
