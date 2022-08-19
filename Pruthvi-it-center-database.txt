@@ -24,8 +24,8 @@ it will ask for password.
     mobile_no like '[0-9][0-9][-][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
   ) NOT NULL,
   location varchar(25) NOT NULL,
-  username varchar(25),
-  password varchar(30) NOT NULL,
+  username varchar(25) NOT NULL,
+  password varchar(25) NOT NULL,
   FOREIGN KEY(username) REFERENCES login_info(username),
   FOREIGN KEY(password) REFERENCES login_info(password)
 );
