@@ -41,10 +41,7 @@ user_id char(2)
 >create table order_history (
   order_id bigint PRIMARY KEY,
   product_id varchar(25),
-  product_name varchar(255),
-  FOREIGN KEY(product_id) REFERENCES product_table(product_id),
-  FOREIGN KEY(product_name) REFERENCES product_table(product_name)
-);
+  product_name varchar(255));
 
 >show tables;
 
@@ -57,6 +54,6 @@ available_size varchar(5) NOT NULL);
 
 
 >create table indexing (id int FOREIGN KEY REFERENCES personal_info(id),
-username varchar(25) NOT NULL FOREIGN KEY REFERENCES login_info(username));
+username varchar(25) NOT NULL);
 
 
