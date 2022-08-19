@@ -33,8 +33,7 @@ it will ask for password.
 index_id smallint unsigned AUTO_INCREMENT PRIMARY KEY,
 username varchar(25) NOT NULL,
 password varchar(25) NOT NULL,
-user_id char(2),
-FOREIGN KEY(user_id) REFERENCES personal_info(user_id)
+user_id char(2)
 );
 
 >show tables;
