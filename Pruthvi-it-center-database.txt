@@ -53,7 +53,7 @@ product_price varchar(6) NOT NULL,
 available_size varchar(5) NOT NULL);
 
 
->create table indexing (id int FOREIGN KEY REFERENCES personal_info(id),
+>create table indexing (id int,
 username varchar(25) NOT NULL);
 
 
