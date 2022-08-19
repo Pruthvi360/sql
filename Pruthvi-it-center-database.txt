@@ -34,7 +34,8 @@ it will ask for password.
 >show tables;
 
 >create table login_info (
-username varchar(25) NOT NULL PRIMARY KEY,
+index_id smallint unsigned AUTO_INCREMENT PRIMARY KEY,
+username varchar(25) NOT NULL,
 password varchar(25) NOT NULL);
 
 >show tables;
